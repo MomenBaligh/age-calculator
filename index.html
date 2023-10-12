@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>Age calculator app</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-input">
+      <div class="input-group">
+        <label for="day">
+          DAY
+        </label>
+        <input 
+          type="text"
+          id="day"
+          placeholder="DD"
+          onkeydown="return nextFocus(event, 'month')"
+        />
+        <small id="invalid-day-msg" class="message"></small>
+      </div>
+      <div class="input-group">
+        <label for="month">
+          MONTH
+        </label>
+        <input 
+          type="text"
+          id="month"
+          placeholder="MM"
+          onkeydown="return nextFocus(event, 'year')"
+        />
+        <span id="invalid-month-msg" class="message"></span>
+      </div>
+      <div class="input-group">
+        <label for="year">
+          YEAR
+        </label>
+        <input 
+          type="text"
+          id="year"
+          placeholder="YYYY"
+          onkeydown="return nextFocus(event, 'btn-calculator')"
+        />
+        <span id="invalid-year-msg" class="message"></span>
+      </div>
+    </div>
+    <div class="container-line-button">
+      <span class="line"></span>
+      <button id="btn-calculator">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="35" 
+          height="35" 
+          viewBox="0 0 46 44"
+        >
+          <g fill="none" stroke="#FFF" stroke-width="2">
+            <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <div class="container-age-generator">
+      <div class="row">
+        <span id="year-numbers" class="number">--</span>
+        <span class="label">years</span>
+      </div>
+      <div class="row">
+        <span id="month-numbers" class="number">--</span>
+        <span class="label">months</span>
+      </div>
+      <div class="row">
+        <span id="day-numbers" class="number">--</span>
+        <span class="label">days</span>
+      </div>
+    </div>
+  </div>
+  <script src="script.js" defer></script>
+
+</body>
+</html>
